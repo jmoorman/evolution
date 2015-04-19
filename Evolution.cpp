@@ -1,0 +1,19 @@
+// Evolution.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+#include <iostream>
+#include <chrono>
+
+#include "ApplicationManager.h"
+#include "BodySegment.h"
+#include "GLDebugDrawer.h"
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	ApplicationManager appManager(1024, 768);
+   int exitCode = appManager.run();
+   return exitCode;
+}
+

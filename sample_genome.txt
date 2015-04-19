@@ -1,0 +1,12 @@
+segments
+#width, height, depth, density, scale, expansions
+2,8,2,1,1,0
+2,2,1,1,1,0
+1,1,1,1,1,0
+
+joints
+#parentId, childId, parentX, parentY, parentZ, childX, childY, childZ, lowerX, lowerY, lowerZ, upperX, upperY, upperZ
+0,1,1,1,0,-1,0,0,0,0,1,0,0,0
+1,2,0,0,0,1,1,1,1,1,1,-1,-1,-1
+1,2,0,0,0,1,1,1,1,1,1,-1,-1,-1
+2,2,0,0,0,1,1,1,1,1,1,-1,-1,-1

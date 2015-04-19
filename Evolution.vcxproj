@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4ED9E9BE-F4A0-475F-BA5E-0C21251A6A1D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Evolution</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)3rdparty\sdl2_ttf-2.0.12\include;$(SolutionDir)3rdparty\GLEW\include;$(SolutionDir)3rdparty\SDL2-2.0.3\include;$(SolutionDir)3rdparty\bullet-2.82-r2704\src;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)3rdparty\sdl2_ttf-2.0.12\lib\x86;$(SolutionDir)3rdparty\GLEW\lib;$(SolutionDir)3rdparty\SDL2-2.0.3\lib\x86;$(SolutionDir)3rdparty\bullet-2.82-r2704\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>BulletDynamics_vs2010_debug.lib;BulletCollision_vs2010_debug.lib;LinearMath_vs2010_debug.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;OpenGL32.lib;Glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="sample_genome.txt" />
+    <Text Include="sample_creature.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="BodySegment.h" />
+    <ClInclude Include="BodySegmentGene.h" />
+    <ClInclude Include="Creature.h" />
+    <ClInclude Include="CreatureFactory.h" />
+    <ClInclude Include="CreatureGenome.h" />
+    <ClInclude Include="FreeLookCamera.h" />
+    <ClInclude Include="GenomeParser.h" />
+    <ClInclude Include="GLDebugDrawer.h" />
+    <ClInclude Include="JointGene.h" />
+    <ClInclude Include="JointInfo.h" />
+    <ClInclude Include="NeuralGene.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="BodySegment.cpp" />
+    <ClCompile Include="BodySegmentGene.cpp" />
+    <ClCompile Include="Creature.cpp" />
+    <ClCompile Include="CreatureFactory.cpp" />
+    <ClCompile Include="CreatureGenome.cpp" />
+    <ClCompile Include="Evolution.cpp" />
+    <ClCompile Include="FreeLookCamera.cpp" />
+    <ClCompile Include="GenomeParser.cpp" />
+    <ClCompile Include="GLDebugDrawer.cpp" />
+    <ClCompile Include="JointGene.cpp" />
+    <ClCompile Include="NeuralGene.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\Aviano_Sans\AvianoSansBlack.otf" />
+    <Font Include="assets\fonts\Aviano_Sans\AvianoSansBold.otf" />
+    <Font Include="assets\fonts\Aviano_Sans\AvianoSansLight.otf" />
+    <Font Include="assets\fonts\Aviano_Sans\AvianoSansRegular.otf" />
+    <Font Include="assets\fonts\Aviano_Sans\AvianoSansThin.otf" />
+    <Font Include="assets\fonts\Dosis\Dosis-Bold.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-ExtraBold.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-ExtraLight.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-Light.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-Medium.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-Regular.ttf" />
+    <Font Include="assets\fonts\Dosis\Dosis-SemiBold.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-Bold.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-BoldItalic.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-ExtraBold.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-Italic.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-Light.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-LightItalic.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-Regular.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-Semibold.ttf" />
+    <Font Include="assets\fonts\Open_Sans\OpenSans-SemiboldItalic.ttf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
